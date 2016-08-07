@@ -81,9 +81,8 @@ public class GameLogic {
 					System.out.println("\nDealer Hand:");
 					dealerHand.getCardsInHand();
 					System.out.println("\nDealer Hand Value:\n" + dealerHand.getValueOfHand());
-					
-					calcWinner();
 				}
+				calcWinner();
 				
 				if (dealerHand.getValueOfHand() >= 17 && winner == false)
 				{

@@ -18,8 +18,14 @@ public class Card
 	}
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return rank + " of " + suit;
+	}
+
+	public Rank getRank() 
+	{
+		return rank;
 	}
 
 	int assignValueToRank()

@@ -26,12 +26,32 @@ public class Hand extends ArrayList<Card>
 		}
 	}
 	
+	int aceInHand()
+	{
+		int numAces = 0;
+		
+		for (Card card : this) 
+		{
+			if (card.getRank() == Rank.ACE)
+			{
+				numAces++;
+			}
+		}
+		
+		return numAces;
+	}
+	
 	int getValueOfHand()
 	{
 		int value = 0;
 		for (Card card : this) 
 		{
 			value = value + card.assignValueToRank();
+		}
+		
+		if (value > 21 && this.aceInHand() > 0)
+		{
+			value = (value - (this.aceInHand()) * 10);
 		}
 		
 		return value;
